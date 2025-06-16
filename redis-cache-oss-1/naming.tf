@@ -20,7 +20,7 @@ module "naming" {
 
 
   generator = {    
-    "hubspring-redis" = {
+    "springhub-ecr" = {
       "redis_cache" = 1,
       "subnet_group"  = 1,
       "security_group" = 1
