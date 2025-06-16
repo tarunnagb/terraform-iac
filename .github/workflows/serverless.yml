@@ -1,0 +1,84 @@
+name: Redis_Cache_Deployment
+run-name: Redis_Cache_${{ inputs.environment }}_${{ inputs.region }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: 'Environment'
+        required: true
+        default: dev
+        options:
+          - dev
+          - qa
+          - stg
+          - prd
+      region:
+        type: choice
+        description: 'AWS Region'
+        required: true
+        default: us-east-1
+        options:
+          - us-east-1
+          - eu-central-1
+          - eu-west-1
+          - us-west-2
+          - ap-southeast-2
+          - ap-south-1
+
+jobs:
+  terraform-deploy:
+    name: Terraform Plan & Apply
+    runs-on: [kfone-dev]
+    defaults:
+      run:
+        working-directory: redis-cache-oss
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      #- name: Set up Terraform
+      #  uses: hashicorp/setup-terraform@v3
+      # with:
+      #    terraform_version: 1.7.5
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ inputs.region }}
+          role-skip-session-tagging: true
+          role-duration-seconds: 1200
+
+      - name: Authenticate using GitHub App
+        uses: actions/create-github-app-token@v1.11.7
+        id: app-token
+        with:
+          app-id: ${{ secrets.GITHUB_APP_ID }}
+          private-key: ${{ secrets.GITHUB_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Configure Git Credentials
+        run: |
+          git config --global url."https://git:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository_owner }}".insteadOf "https://github.com/${{ github.repository_owner }}"
+
+      - name: Terraform Init
+        #run: terraform init -backend-config=backend/${{ inputs.region }}/${{ inputs.environment }}.s3.backend -input=false -var-file=variables/${{ inputs.region }}/${{ inputs.environment }}.tfvars
+        run: terraform init
+
+      - name: Terraform Plan
+        env:
+          TF_VAR_region: ${{ inputs.region }}
+          TF_VAR_ENVIRONMENT: ${{ inputs.environment }}
+        run: terraform plan -input=false -var-file=env/${{ inputs.region }}/${{ inputs.environment }}.tfvars -out=tfplan
+
+      - name: Terraform Apply
+        env:
+          TF_VAR_region: ${{ inputs.region }}
+          TF_VAR_ENVIRONMENT: ${{ inputs.environment }}
+        run: terraform apply -input=false -auto-approve tfplan
