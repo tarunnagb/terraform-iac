@@ -74,10 +74,7 @@ jobs:
         env:
           TF_VAR_region: ${{ inputs.region }}
           TF_VAR_ENVIRONMENT: ${{ inputs.environment }}
-        run: terraform plan \
-          -input=false \
-          -var-file=env/${{ inputs.region }}/${{ inputs.environment }}.tfvars \
-          -out=tfplan
+        run: terraform plan -input=false -var-file=env/${{ inputs.region }}/${{ inputs.environment }}.tfvars -out=tfplan
 
       - name: Terraform Apply
         env:
