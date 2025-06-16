@@ -39,9 +39,6 @@ jobs:
       contents: read
 
     steps:
-      - name: Debug - Confirm runner is working
-        run: echo "Running on self-hosted runner ✅"
-
       - name: Checkout Code
         uses: actions/checkout@v4
 
