@@ -26,7 +26,7 @@ module "naming" {
       "security_group" = 1
     }
 
-    "payhub-cache" = {
+    "payhub-cache-1" = {
       "redis_cache" = 1,
       "subnet_group"  = 1,
       "security_group" = 1
