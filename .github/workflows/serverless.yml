@@ -33,7 +33,7 @@ jobs:
     runs-on: [kfone-dev]
     defaults:
       run:
-        working-directory: redis-cache-oss
+        working-directory: redis-cache-oss-1
     permissions:
       id-token: write
       contents: read
