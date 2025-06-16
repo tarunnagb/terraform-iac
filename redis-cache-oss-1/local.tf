@@ -1,7 +1,8 @@
 locals {
   redis_cache = toset(
       [
-        "payhub-ecr"
+        "payhub-ecr",
+        "springhub-ecr"
       ]
   )
 }
