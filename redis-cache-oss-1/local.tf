@@ -1,7 +1,8 @@
 locals {
   redis_cache = toset(
       [
-        "payhub-redis"
+        "payhub-redis",
+        "hubspring-redis"
       ]
   )
 }
