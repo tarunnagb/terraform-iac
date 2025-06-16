@@ -20,7 +20,7 @@ module "naming" {
 
 
   generator = {    
-    "hubspring-cache" = {
+    "hubspring-redis" = {
       "redis_cache" = 1,
       "subnet_group"  = 1,
       "security_group" = 1
