@@ -30,7 +30,7 @@ on:
 jobs:
   terraform-deploy:
     name: Terraform Plan & Apply
-    runs-on: [kfone-dev]  # your self-hosted runner label
+    runs-on: [kfone-dev-1]  # your self-hosted runner label
     defaults:
       run:
         working-directory: redis-cache-oss-1
