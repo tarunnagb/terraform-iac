@@ -1,5 +1,5 @@
-name: Redis_Cache_Deployment
-run-name: Redis_Cache_${{ inputs.environment }}_${{ inputs.region }}
+name: Lambda_Deployment
+run-name: Lambda_Deployment_${{ inputs.environment }}_${{ inputs.region }}
 
 on:
   workflow_dispatch:
