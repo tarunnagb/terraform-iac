@@ -33,7 +33,7 @@ jobs:
     runs-on: [tar-runner]
     defaults:
       run:
-        working-directory: redis-cache-oss-1
+        working-directory: Lambda
     permissions:
       id-token: write
       contents: read
@@ -78,7 +78,7 @@ jobs:
     environment: approval-${{ inputs.environment }}
     defaults:
       run:
-        working-directory: redis-cache-oss-1
+        working-directory: Lambda
     steps:
       - name: Checkout code to custom directory
         uses: actions/checkout@v2
@@ -89,7 +89,7 @@ jobs:
     runs-on: [tar-runner]
     defaults:
       run:
-        working-directory: redis-cache-oss-1
+        working-directory: Lambda
     permissions:
       id-token: write
       contents: read
