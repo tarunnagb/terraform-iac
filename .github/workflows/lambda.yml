@@ -30,7 +30,7 @@ on:
 jobs:
   terraform-plan:
     name: Terraform Plan
-    runs-on: [tar-runner]
+    runs-on: [self-hosted, Linux, X64]
     defaults:
       run:
         working-directory: Lambda
@@ -74,7 +74,7 @@ jobs:
 
   Approval:
     needs: [terraform-plan]
-    runs-on: [tar-runner]
+    runs-on: [self-hosted, Linux, X64]
     environment: approval-${{ inputs.environment }}
     defaults:
       run:
@@ -86,7 +86,7 @@ jobs:
   terraform-apply:
     name: Terraform Apply
     needs: [Approval]
-    runs-on: [tar-runner]
+    runs-on: [self-hosted, Linux, X64]
     defaults:
       run:
         working-directory: Lambda
