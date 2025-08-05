@@ -1,6 +1,6 @@
 region = "us-east-1"              ## Region for which you want to select
 ENVIRONMENT= "dev"
-INSTANCE =  "kfone"
+INSTANCE =  ""
 location = "northvirginia"
 
 
@@ -143,6 +143,7 @@ Tech-Owner           = ""
   #  apigateway_triggers = []
   #}
 #]
+
 
 
 
