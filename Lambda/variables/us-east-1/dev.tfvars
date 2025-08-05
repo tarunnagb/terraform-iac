@@ -6,23 +6,23 @@ location = "northvirginia"
 
 ## Tagging Variables
 
-Line-Of-Business     = "KF Digital"
-Applications-Dept    = "One Platform - Core Engine"
+Line-Of-Business     = ""
+Applications-Dept    = ""
 Cost-Center          = "US21GPS"
 WBS-Code             = "PLATFORM.08"
-infra_KFDAppGroup    = "KFOne Platform"
+infra_KFDAppGroup    = ""
 infra_KFDAppSubGroup = "DevOps"
 Env                  = "Dev"
-Owner                = "Seshagiri Nuthalapat"
+Owner                = ""
 Accessibility        = "private"
 Classification       = "Proprietary"
 HasPII               = "TBD"
 Compliance           = "TBD"
-Tech-Owner           = "Varma Saripalli"
+Tech-Owner           = ""
 
 #lambda_configs = [
 #  {
-#    name              = "kfcore-caas-publications-proxy-dev"
+#    name              = ""
 ##    runtime           = "nodejs22.x"
  #   handler           = "index.handler"
  #   memory_size       = 1536
@@ -44,7 +44,7 @@ Tech-Owner           = "Varma Saripalli"
  # },
 
  # {
- #   name              = "kfcore-raas-proxy-dev"
+ #   name              = ""
  ##   runtime           = "nodejs22.x"
   #  handler           = "index.handler"
   #  memory_size       = 3008
@@ -59,7 +59,7 @@ Tech-Owner           = "Varma Saripalli"
   #  ]
   #},
   #{
-   # name              = "kfcore-caas-authoring-proxy-dev"
+   # name              = ""
    # runtime           = "nodejs22.x"
    # handler           = "index.handler"
    # memory_size       = 3008
@@ -73,7 +73,7 @@ Tech-Owner           = "Varma Saripalli"
    # apigateway_triggers = []
   #},
   #{
-  #  name              = "kfcore-job-router-lambda-proxy-dev"
+  #  name              = ""
    # runtime           = "nodejs22.x"
    # handler           = "index.handler"
    # memory_size       = 3008
@@ -87,7 +87,7 @@ Tech-Owner           = "Varma Saripalli"
    # apigateway_triggers = []
   ##},
   #{
-  #  name              = "kfcore-rptaas-proxy-dev"
+  #  name              = ""
   #  runtime           = "nodejs22.x"
   #  handler           = "index.handler"
   #  memory_size       = 3008
@@ -101,7 +101,7 @@ Tech-Owner           = "Varma Saripalli"
   #  apigateway_triggers = []
   #},
   #{
-  #  name              = "kfcore-rptaas-printer-pdf-proxy-dev"
+  #  name              = ""
   #  runtime           = "nodejs22.x"
   #  handler           = "index.handler"
   #  memory_size       = 3008
@@ -115,7 +115,7 @@ Tech-Owner           = "Varma Saripalli"
   #  apigateway_triggers = []
   #},
   #{
-  #  name              = "kfcore-scaas-proxy-dev"
+  #  name              = ""
   #  runtime           = "nodejs22.x"
   #  handler           = "index.handler"
 # memory_size       = 3008
@@ -129,7 +129,7 @@ Tech-Owner           = "Varma Saripalli"
    # apigateway_triggers = []
   #},
   #{
-  #  name              = "kfcore-sass-auth-lambda-proxy-dev"
+  #  name              = ""
   #  runtime           = "nodejs22.x"
   #  handler           = "index.handler"
   #  memory_size       = 3008
@@ -143,6 +143,7 @@ Tech-Owner           = "Varma Saripalli"
   #  apigateway_triggers = []
   #}
 #]
+
 
 
 
