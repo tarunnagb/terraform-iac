@@ -1,31 +1,30 @@
 region = "ap-south-1"              ## Region for which you want to select
 ENVIRONMENT= "dev"
-INSTANCE =  "kfone"
+INSTANCE =  ""
 location = "mumbai"
 
 # kms_key_id       = "your-kms-key-id"       # Replace with your actual KMS key ID
 # redis_auth_token = "your-auth-token"       # Replace with your actual Redis authentication token
 
-vpn_cidrs = ["10.4.0.0/21"]
+vpn_cidrs = [""]
 
 
 ## Tagging Variables
 
-Line-Of-Business     = "KF Digital"
-Applications-Dept    = "One Platform - Core Engine"
-Cost-Center          = "US21GPS"
-WBS-Code             = "PLATFORM.08"
-infra_KFDAppGroup    = "KFOne Platform"
+Line-Of-Business     = ""
+Applications-Dept    = ""
+Cost-Center          = ""
+WBS-Code             = ""
+infra_KFDAppGroup    = ""
 infra_KFDAppSubGroup = "DevOps"
 Env                  = "Dev"
-Owner                = "Seshagiri Nuthalapat"
+Owner                = ""
 Accessibility        = "private"
 Classification       = "Proprietary"
 HasPII               = "TBD"
 Compliance           = "TBD"
-Tech-Owner           = "Varma Saripalli"
+Tech-Owner           = ""
 
 redis_auth_token = {
-  hubspring-rc = "ohohrwgjwboeoiwfk"
-  payhub-rc  = "njfwhouwuohfwjob99"
 }
+
